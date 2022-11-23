@@ -33,3 +33,7 @@ diffconfig: |
   CONFIG_KERNEL_CGROUP_FREEZER=y
   CONFIG_PACKAGE_cgroupfs-mount=y
   KERNEL_CGROUP=y
+  CONFIG_PACKAGE_kmod-br-netfilter=y
+  CONFIG_PACKAGE_kmod-nf-ipvs=y
+  CONFIG_PACKAGE_kmod-veth=y
+

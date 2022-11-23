@@ -42,7 +42,7 @@ jobs:
         ./build.sh ~ ${{ inputs.device }} ${{ inputs.ui }}
     - name: show-files 
       run: |
-        tree -L ~/openwrt/bin/targets/
+        tree -L 3 ~/openwrt/bin/targets/
         tree ~/firmware/
     - name: Organize files
       id: organize

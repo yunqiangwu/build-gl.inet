@@ -243,4 +243,11 @@ sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
 
 # echo "10 5 * * 6 sleep 70 && touch /etc/banner && reboot" > /etc/crontabs/root
 
+sed -i '/root/d' /etc/shadow
+sed -i '1i\root:$1$1zNOlnln$NCUG3f6I6cF7pRQ46yPwV1:19319:0:99999:7:::' /etc/shadow
+
+echo 'src/gz aliyun_packages https://mirrors.aliyun.com/openwrt/releases/21.02.5/packages/arm_cortex-a7/packages' >> /etc/opkg/customfeeds.conf
+
+echo 'src/gz glinet_core https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/kmod-4.1.0/arm_cortex-a7/ip60xx\nsrc/gz glinet_gli_pub https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/packages-4.1/arm_cortex-a7/glinet\nsrc/gz opnwrt_packages https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/packages-4.0/arm_cortex-a7/packages' > /etc/opkg/distfeeds.conf
+
 exit 0

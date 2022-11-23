@@ -9,8 +9,8 @@ on:
         default: 'target_wlan_ap-gl-ax1800' 
         type: choice
         options:
-        - target_wlan_ap-gl-ax1800
         - target_wlan_ap-gl-axt1800
+        - target_wlan_ap-gl-ax1800
         - target_wlan_ap-gl-ax1800-5-4
         - target_wlan_ap-gl-axt1800-5-4
         - target_ipq40xx_gl-a1300
@@ -22,6 +22,7 @@ on:
       ui:
         description: '是否包含官方UI (目前支持IPQ60XX系列和MT2500)'
         required: false
+        default: true 
         type: boolean
         
 jobs:

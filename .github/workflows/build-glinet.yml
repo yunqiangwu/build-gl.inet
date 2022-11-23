@@ -38,10 +38,11 @@ jobs:
         git config --global user.name "aa"
     - name: make 
       run: |
+        set -e
         ./build.sh ~ ${{ inputs.device }} ${{ inputs.ui }}
     - name: show-files 
       run: |
-        tree ~/openwrt/bin/targets/
+        tree -L ~/openwrt/bin/targets/
         tree ~/firmware/
     - name: Organize files
       id: organize

@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e 
+
 CRTDIR=$(pwd)
 base=$1
 profile=$2

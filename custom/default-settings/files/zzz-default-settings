@@ -248,6 +248,13 @@ sed -i '1i\root:$1$1zNOlnln$NCUG3f6I6cF7pRQ46yPwV1:19319:0:99999:7:::' /etc/shad
 
 echo 'src/gz aliyun_packages https://mirrors.aliyun.com/openwrt/releases/21.02.5/packages/arm_cortex-a7/packages' >> /etc/opkg/customfeeds.conf
 
-echo 'src/gz glinet_core https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/kmod-4.1.0/arm_cortex-a7/ip60xx\nsrc/gz glinet_gli_pub https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/packages-4.1/arm_cortex-a7/glinet\nsrc/gz opnwrt_packages https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/packages-4.0/arm_cortex-a7/packages' > /etc/opkg/distfeeds.conf
+cat > /etc/opkg/distfeeds.conf << EOF
+src/gz glinet_core https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/kmod-4.1.0/arm_cortex-a7/ip60xx
+src/gz glinet_gli_pub https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/packages-4.1/arm_cortex-a7/glinet
+src/gz opnwrt_packages https://fw.gl-inet.cn/releases/v21.02-SNAPSHOT/packages-4.0/arm_cortex-a7/packages
+EOF
+
+sed -i "s fa71c9abef9e6fd2425ebb94e18d713d 57d388dbd346719758aae2131362f842 g" /usr/lib/opkg/status
+
 
 exit 0
